@@ -1,0 +1,6 @@
+@SFTB_Demo_HostAddress = http://localhost:5177
+
+GET {{SFTB_Demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
