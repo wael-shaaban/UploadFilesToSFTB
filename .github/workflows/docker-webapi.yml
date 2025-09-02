@@ -1,0 +1,25 @@
+name: .NET Web API with Docker
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout source
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Build and push Docker image
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile   # Path to your Dockerfile
+          push: true
+          tags: your-dockerhub-username/your-repo-name:latest
